@@ -11,7 +11,7 @@ from io import BytesIO
 import re
 # Load clf.pkl from Google Drive
 @st.cache_resource
-def load_clf_from_drive(file_id):
+def load_pickle_from_drive(file_id):
     url = f"https://drive.google.com/uc?id={file_id}"
     output = BytesIO()
     gdown.download(url, output, quiet=False, fuzzy=True)
@@ -20,15 +20,17 @@ def load_clf_from_drive(file_id):
 
 # Google Drive file ID for clf.pkl
 clf_file_id = "1xk8Q3qCTtGGcgyt4DxhXM6rsffnG78Oo"  # ⬅️ Replace with your real ID
+tfidf_file_id = "1HPyotft-sYgotNUazpMJb9F9N3gAg-0C"
+encoder_file_id = "1EThhP8gyZuPEPhvc2GpNtKjnyxza9XKL"
 # Load clf from Drive
 @st.cache_resource
 def load_clf():
-    return load_clf_from_drive(clf_file_id)
+    return load_pickle_from_drive(clf_file_id)
 
 # Load pre-trained model and TF-IDF vectorizer
 svc_model = load_clf()
-tfidf = pickle.load(open('tfidf.pkl', 'rb'))
-le = pickle.load(open('encoder.pkl', 'rb'))
+tfidf = load_pickle_from_drive(tfidf_file_id)
+le = load_pickle_from_drive(encoder_file_id)
 
 
 
