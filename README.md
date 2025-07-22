@@ -1,3 +1,4 @@
+LIVE DEMO: https://resume-categorisation-app-6c8fuhuub74r8ecffuqewu.streamlit.app/
 # Resume-Categorisation-App
 Resume Categorisation App: This project is aimed at automating the categorization of resumes into predefined job categories. The goal is to use machine learning techniques to classify resumes based on their content into various categories such as software engineering, marketing, finance, etc.
 
