@@ -98,7 +98,6 @@ def prediction(input_resume):
 def main():
     st.title("Resume Categorisation App")
     st.title("By Nikhil Sharma(102203474)")
-    st.title("and Yatharth Kohli(102203648)")
     uploaded_file = st.file_uploader("Upload a Resume", type=["pdf", "docx", "txt"])
 
     if uploaded_file is not None:
